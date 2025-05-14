@@ -1,0 +1,78 @@
+/* Style global */
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-background-color: #ffffff;
+}
+
+/* ----- Style du titre ----- */
+/*
+   Pour appliquer ce style, modifiez le label du titre dans le FXML en lui attribuant
+   la classe "titre" (par exemple : styleClass="titre").
+*/
+.label.titre {
+    -fx-font-size: 24px;          /* Taille de police agrandie */
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;         /* Couleur foncée pour une bonne lisibilité */
+}
+
+/* ----- Style des éléments sélectionnés dans un TableView ----- */
+.table-view .table-row-cell:filled:selected,
+.table-view .table-cell:filled:selected {
+    -fx-background-color: #b3d4fc;  /* Couleur de fond distinctive en sélection */
+}
+
+/* ----- Style de base des boutons ----- */
+.button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-padding: 8 15 8 15;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1976D2;
+}
+
+/* ----- Style spécifique pour les boutons "Supprimer" en rouge ----- */
+#supprimerEquipeButton,
+#supprimerJoueurButton {
+    -fx-background-color: #e74c3c;  /* Fond rouge */
+    -fx-text-fill: white;
+    -fx-padding: 8 15 8 15;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+#supprimerEquipeButton:hover,
+#supprimerJoueurButton:hover {
+    -fx-background-color: #c0392b;  /* Rouge légèrement plus foncé au survol */
+}
+
+/* ----- Autres styles pour une consistance générale ----- */
+
+/* Champs de saisie */
+.text-field {
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 5;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: #fafafa;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+}
+
+/* En-tête des colonnes de TableView */
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #e6e6e6, #cccccc);
+}
+
+/* Diviseurs du SplitPane */
+.split-pane > .split-pane-divider {
+    -fx-background-color: #b0b0b0;
+}
