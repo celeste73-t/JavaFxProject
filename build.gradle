@@ -27,7 +27,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'tournoi_volley'
-    mainClass = 'tournoi_volley.HelloApplication'
+    mainClass = 'tournoi_volley.Launcher'
 }
 
 javafx {

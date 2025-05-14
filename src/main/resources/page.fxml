@@ -5,16 +5,18 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="tournoi_volley.TournoiController"
+            fx:controller="tournoi_volley.Controller"
             stylesheets="@style.css">
     <top>
-        <VBox spacing="10">
+        <VBox spacing="10" styleClass="header">
             <padding>
                 <Insets top="20" right="20" bottom="10" left="20"/>
             </padding>
-            <Label text="Tournoi de Volley-ball" style="-fx-font-size: 20; -fx-font-weight: bold"/>
-            <Label fx:id="dateLabel" text="Dates d'inscription" style="-fx-font-style: italic"/>
-            <Label fx:id="statutLabel" text="Statut du tournoi"/>
+            <!-- Ajout de styleClass="title" pour le titre -->
+            <Label text="Tournoi de Volley-ball" styleClass="title"/>
+            <!-- Ajout de styleClass pour les autres labels -->
+            <Label fx:id="dateLabel" text="Dates d'inscription" styleClass="date"/>
+            <Label fx:id="statutLabel" text="Statut du tournoi" styleClass="status"/>
         </VBox>
     </top>
 

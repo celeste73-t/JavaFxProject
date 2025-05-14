@@ -1,27 +1,47 @@
-/* Style global */
+/* === Partie Haute (Header) === */
+.header {
+    /* Fond dégradé du blanc vers un gris très léger */
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #ecf0f1);
+    /* Des espacements internes généreux */
+    -fx-padding: 20 30 20 30;
+    /* Petite bordure en bas pour délimiter le header */
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 2 0;
+    /* Espace entre les éléments à l'intérieur de la VBox */
+    -fx-spacing: 10;
+}
+
+/* --- Style du titre --- */
+.header .label.title {
+    -fx-font-size: 26px;          /* Taille agrandie pour le titre */
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;         /* Couleur sombre pour une bonne lisibilité */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0.5, 0, 1);
+}
+
+/* --- Styles pour les autres labels du header (dates et statut) --- */
+.header .label.date,
+.header .label.status {
+    -fx-font-size: 16px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-style: italic;
+}
+
+/* === Styles généraux pour la suite de l'interface === */
+
+/* Global : police et fond */
 .root {
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     -fx-background-color: #ffffff;
 }
 
-/* ----- Style du titre ----- */
-/*
-   Pour appliquer ce style, modifiez le label du titre dans le FXML en lui attribuant
-   la classe "titre" (par exemple : styleClass="titre").
-*/
-.label.titre {
-    -fx-font-size: 24px;          /* Taille de police agrandie */
-    -fx-font-weight: bold;
-    -fx-text-fill: #2c3e50;         /* Couleur foncée pour une bonne lisibilité */
-}
-
-/* ----- Style des éléments sélectionnés dans un TableView ----- */
+/* Éléments sélectionnés dans les TableView */
 .table-view .table-row-cell:filled:selected,
 .table-view .table-cell:filled:selected {
-    -fx-background-color: #b3d4fc;  /* Couleur de fond distinctive en sélection */
+    -fx-background-color: #b3d4fc;
 }
 
-/* ----- Style de base des boutons ----- */
+/* Boutons généraux */
 .button {
     -fx-background-color: #2196F3;
     -fx-text-fill: white;
@@ -34,10 +54,10 @@
     -fx-background-color: #1976D2;
 }
 
-/* ----- Style spécifique pour les boutons "Supprimer" en rouge ----- */
+/* Boutons "Supprimer" en rouge */
 #supprimerEquipeButton,
 #supprimerJoueurButton {
-    -fx-background-color: #e74c3c;  /* Fond rouge */
+    -fx-background-color: #e74c3c;
     -fx-text-fill: white;
     -fx-padding: 8 15 8 15;
     -fx-background-radius: 5;
@@ -46,12 +66,10 @@
 
 #supprimerEquipeButton:hover,
 #supprimerJoueurButton:hover {
-    -fx-background-color: #c0392b;  /* Rouge légèrement plus foncé au survol */
+    -fx-background-color: #c0392b;
 }
 
-/* ----- Autres styles pour une consistance générale ----- */
-
-/* Champs de saisie */
+/* TextFields */
 .text-field {
     -fx-border-color: #cccccc;
     -fx-border-width: 1;
@@ -60,14 +78,13 @@
     -fx-padding: 5;
 }
 
-/* TableView */
+/* TableView et en-têtes */
 .table-view {
     -fx-background-color: #fafafa;
     -fx-border-color: #cccccc;
     -fx-border-width: 1;
 }
 
-/* En-tête des colonnes de TableView */
 .table-view .column-header-background {
     -fx-background-color: linear-gradient(to bottom, #e6e6e6, #cccccc);
 }

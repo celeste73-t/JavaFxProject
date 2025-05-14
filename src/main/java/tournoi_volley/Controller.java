@@ -18,7 +18,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 import java.time.LocalDate;
 
-public class TournoiController {
+public class Controller {
 
     private Tournoi tournoi = new Tournoi();
     private Equipe equipeSelectionnee;
