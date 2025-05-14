@@ -24,7 +24,7 @@ public class Tournoi {
         return equipes;
     }
 
-    public void addEquipe(Equipe equipe) throws TournoiCompletException, DateInscriptionException {
+    public void addEquipe(Equipe equipe) throws TournoiCompletException, DateInscriptionException, JoueurDejaInscritException {
         // Vérifier que la date d'inscription est valide
         if (!DateUtil.estPeriodeInscription()) {
             throw new DateInscriptionException("Les inscriptions sont ouvertes du "

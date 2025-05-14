@@ -56,21 +56,18 @@ public class Joueur {
         this.equipe = equipe;
     }
 
-    public boolean estInscrit() {
-        return equipe != null;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Joueur joueur = (Joueur) o;
-        return Objects.equals(nom, joueur.nom) && Objects.equals(prenom, joueur.prenom) && Objects.equals(email, joueur.email);
+        return Objects.equals(nom, joueur.nom) &&
+                Objects.equals(prenom, joueur.prenom);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nom, prenom, email);
+        return Objects.hash(nom, prenom);
     }
 
     @Override

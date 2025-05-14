@@ -13,6 +13,8 @@ import tournoi_volley.model.Equipe;
 import tournoi_volley.model.Joueur;
 import tournoi_volley.model.Tournoi;
 import tournoi_volley.util.DateUtil;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 import java.time.LocalDate;
 
@@ -88,8 +90,11 @@ public class TournoiController {
         dateLabel.setText("Inscriptions du " + DateUtil.formatDate(dateDebut) + " au " + DateUtil.formatDate(dateFin));
 
         // Configuration des tables
-        nomEquipeColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        nbJoueursColumn.setCellValueFactory(new PropertyValueFactory<>("nombreJoueurs"));
+        nomEquipeColumn.setCellValueFactory(cellData -> 
+        new SimpleStringProperty(cellData.getValue().getNom()));
+        
+    nbJoueursColumn.setCellValueFactory(cellData -> 
+        new SimpleIntegerProperty(cellData.getValue().getJoueurs().size()).asObject());
 
         nomJoueurColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenomJoueurColumn.setCellValueFactory(new PropertyValueFactory<>("prenom"));
@@ -149,6 +154,9 @@ public class TournoiController {
         try {
             tournoi.addEquipe(nouvelleEquipe);
             equipesList.add(nouvelleEquipe);
+            System.out.println("Équipe ajoutée: " + nouvelleEquipe.getNom());
+            System.out.println("Nombre d'équipes dans la liste: " + equipesList.size());
+            equipesTable.refresh(); // Forcer le rafraîchissement du tableau
             nomEquipeField.clear();
             mettreAJourStatut();
         } catch (TournoiCompletException e) {
