@@ -190,10 +190,22 @@ public class TournoiController {
         String telephone = telJoueurField.getText().trim();
         String email = emailJoueurField.getText().trim();
 
-        if (nom.isEmpty() || prenom.isEmpty()) {
-            afficherAlerte("Erreur", "Champs obligatoires", "Le nom et le prénom sont obligatoires.");
+        if (nom.isEmpty() || prenom.isEmpty() || telephone.isEmpty() || email.isEmpty() ) {
+            afficherAlerte("Erreur", "Champs obligatoires", null);
             return;
         }
+
+        if (!telephone.matches("^\\d{10}$"))
+        {
+            afficherAlerte("Erreur", "Numero nom conforme", null);
+            return;
+        }
+        if (!email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"))
+        {
+            afficherAlerte("Erreur", "Email nom conforme", null );
+            return;
+        }
+
 
         Joueur nouveauJoueur = new Joueur(nom, prenom, telephone, email);
 
@@ -262,4 +274,5 @@ public class TournoiController {
         alert.setContentText(contenu);
         alert.showAndWait();
     }
+
 }
